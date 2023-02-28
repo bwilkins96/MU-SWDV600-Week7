@@ -2,9 +2,9 @@
 # Bottom-up design using test cases
 
 def test():
-    print(intersection('hello', 'world')) # -> 'lo'
-    print(intersection('unique', 'rock')) # -> ''
-    print(intersection('canada', 'canine')) # -> 'can'
+    print(intersection('hello', 'world'))     # -> 'lo'
+    print(intersection('unique', 'rock'))     # -> ''
+    print(intersection('canada', 'canine'))   # -> 'can'
 
 def intersection(str1, str2):
     common_chars = ''
