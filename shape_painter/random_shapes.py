@@ -17,8 +17,16 @@ def get_input():
 
     return file_name, num_shapes
 
-def get_random_points():
-    coords = (randrange(0, 500), randrange(0, 500))
+def get_random_points(name):
+    max_height = 500
+    max_width = 500
+
+    if name == 'Rectangle':
+        coords = (randrange(1, max_height-1), randrange(1, max_width-1))
+    else:
+        offset = 70
+        coords = (randrange(offset, max_height-offset), randrange(offset, max_width-offset))
+    
     return f'{coords[0]}, {coords[1]}'
 
 def get_random_color():
@@ -30,16 +38,16 @@ def get_random_color():
 
 def get_random_rect():
     name = 'Rectangle'
-    ul_point = get_random_points()
-    lr_point = get_random_points()
+    ul_point = get_random_points(name)
+    lr_point = get_random_points(name)
     color = get_random_color()
 
     return f'{name}; {ul_point}; {lr_point}; {color}'
 
 def get_random_circle():
     name = 'Circle'
-    center_point = get_random_points()
-    radius = randrange(5, 100)
+    center_point = get_random_points(name)
+    radius = randrange(5, 70)
     color = get_random_color()
 
     return f'{name}; {center_point}; {radius}; {color}'
